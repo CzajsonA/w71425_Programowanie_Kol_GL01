@@ -1,0 +1,13 @@
+Zadanie na 4 
+Git push - Polecenie w systemie Git służy do przesyłania lokalnych zmian do zdalnego repozytorium. 
+Oznacza to, że wszystkie zmiany wprowadzone w lokalnym repozytorium, takie jak nowe pliki, zmodyfikowane 
+pliki, commity i gałęzie, zostają wysłane na serwer, gdzie znajduje się zdalne repozytorium
+
+Git checkout -Polecenie w Git służy do przełączania się między gałęziami (ang. branches) 
+i aktualizacji stanu repozytorium do określonego punktu w historii projektu. 
+
+Git commit - W systemie kontroli wersji Git, git commit to polecenie, które służy do zatwierdzania
+zmian w lokalnym repozytorium. Oznacza to, że tworzy migawkę (snapshot) stanu projektu w danym momencie, 
+zapisując ją w historii zmian.
+
+
