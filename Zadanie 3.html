@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja</title>
+</head>
+<body>
+    <h2>Formularz Rejestracyjny</h2>
+    
+    <form id="formularzRejestracyjny">
+        <label>Email:</label><br>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <label>Hasło:</label><br>
+        <input type="password" id="haslo" name="haslo" required><br><br>
+
+        <label>Kraj:</label><br>
+        <select id="kraj" name="kraj" required>
+            <option value="">-- Wybierz kraj --</option>
+            <option value="Polska">Polska</option>
+            <option value="Niemcy">Niemcy</option>
+            <option value="Czechy">Czechy</option>
+            <option value="Włochy">Włochy</option>
+        </select><br><br>
+
+        <input type="submit" value="Zarejestruj się">
+    </form>
+
+    <p id="blad" style="color: red;"></p>
+
+    <script>
+        document.getElementById("formularzRejestracyjny").addEventListener("submit", function(e) {
+            e.preventDefault(); // zatrzymanie wysyłki formularza
+
+            const email = document.getElementById("email").value;
+            const haslo = document.getElementById("haslo").value;
+            const kraj = document.getElementById("kraj").value;
+            const blad = document.getElementById("blad");
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const hasloRegex = /^(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+
+            if (!emailRegex.test(email)) {
+                blad.textContent = "Niepoprawny adres email.";
+                return;
+            }
+
+            if (!hasloRegex.test(haslo)) {
+                blad.textContent = "Hasło musi mieć min. 8 znaków, 1 cyfrę i 1 znak specjalny.";
+                return;
+            }
+
+            if (kraj === "") {
+                blad.textContent = "Wybierz kraj.";
+                return;
+            }
+
+            blad.style.color = "green";
+            blad.textContent = "Rejestracja udana!";
+        });
+    </script>
+</body>
+</html>
