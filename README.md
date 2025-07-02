@@ -1,0 +1,1 @@
+# w71425_Programowanie_Kol_GL01
